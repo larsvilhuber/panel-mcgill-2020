@@ -5,10 +5,10 @@ vpath %.md markdown
 vpath %.html html
 
 %.html: %.md
-	pandoc --standalone --slide-level 2 -t revealjs -o web/$@ $<
+	pandoc --standalone --slide-level 2 -t revealjs -o docs/$@ $<
 
 default: example.html
 
 build: $(HTML) index.md
-	pandoc --standalone --slide-level 2  -t revealjs -o web/index.html index.md
-	cp -R images reveal.js web/
+	pandoc --standalone --slide-level 2  -t revealjs -o docs/index.html index.md
+	cp -R images reveal.js docs/
